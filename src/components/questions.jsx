@@ -2,14 +2,24 @@ import axios from 'axios';
 import React from'react';
 import { useState } from'react';
 import { useEffect } from'react';
+import { Box, Card, CardContent, Typography } from '@mui/material';
+
+// style the questions container
+const questionsContainerStyle = {
+  display:"flex",
+  flexDirection:"column",
+  alignItems:"center",
+  justifyContent:"center",
+  minHeight:"100vh"
+}
 
 export default function Questions(){
   const [questions, setQuestions] = useState([]);
 
-  // Function to fetch data from backend
+  // Fetch data from backend
   const fetchQuestions = async()=>{
     try{
-      const allQuestions = await axios.get('http://localhost:3001/questions');
+      const allQuestions = await axios.get(`${process.env.REACT_APP_API_SERVER}/questions`);
       setQuestions(allQuestions.data);
     }
     catch(error){
@@ -22,10 +32,10 @@ export default function Questions(){
   }, [])
 
   return (
-    <ul>
+    <Box sx={questionsContainerStyle}>
       {questions.map((question)=>{
         return <li key={question.id}>{question.question}</li>
       })}
-    </ul>
+    </Box>
   )
 }
