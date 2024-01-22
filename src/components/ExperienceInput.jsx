@@ -9,11 +9,15 @@ export default function ExperinceInput() {
 
   // Handle submit
   const handleSubmit = async () => {
-    console.log(experience);
-    
+       
     // Submit data to backend
+    const data = {
+      // Note: use hardcoded userId for now
+      userId:4,
+      experience:experience
+    }
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_SERVER}/experiences`, experience);
+      const response = await axios.post(`${process.env.REACT_APP_API_SERVER}/experiences`, data);
       console.log(response);
     }
     catch(error){
