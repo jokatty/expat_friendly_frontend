@@ -24,7 +24,7 @@ export default function Experiences(){
     <ul>
       {experiences.map((experience)=> {
         return(
-          <li>{experience}</li>
+          <li key={experience.id}>{experience.experience}</li>
         )
       })}
     </ul>
