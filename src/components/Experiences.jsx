@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import ExperinceInput from "./ExperienceInput";
 
 export default function Experiences(){
   // State for experiences
@@ -15,18 +16,21 @@ export default function Experiences(){
       catch(error){
         console.log('error fetching data', error);
       }
-    }
+    }  
   
     fetchExperiences();
   }, [])
 
   return (
-    <ul>
-      {experiences.map((experience)=> {
-        return(
-          <li key={experience.id}>{experience.experience}</li>
-        )
-      })}
-    </ul>
+  <>
+        <ul>
+        {experiences.map((experience)=> {
+          return(
+            <li key={experience.id}>{experience.experience}</li>
+          )
+        })}
+      </ul>
+      <ExperinceInput />
+  </>
   )
 }
