@@ -7,8 +7,7 @@ export default function Experiences(){
   const [experiences, setExperiences] = useState([])
 
   // Fetch data from backend
-  useEffect(()=>{
-    const fetchExperiences = async () => {
+  const fetchExperiences = async () => {
       try{
         const allExperiences = await axios.get(`${process.env.REACT_APP_API_SERVER}/experiences`);
         setExperiences(allExperiences.data);
@@ -17,7 +16,8 @@ export default function Experiences(){
         console.log('error fetching data', error);
       }
     }  
-  
+
+  useEffect(()=>{
     fetchExperiences();
   }, [])
 
@@ -30,7 +30,7 @@ export default function Experiences(){
           )
         })}
       </ul>
-      <ExperinceInput />
+      <ExperinceInput previousExperiences={experiences} setAllExperince={setExperiences}/>
   </>
   )
 }
