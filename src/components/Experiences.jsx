@@ -21,12 +21,18 @@ export default function Experiences(){
     fetchExperiences();
   }, [])
 
+  // handle click
+  const handleClick = (id) => {
+    console.log(id);
+  }
+
   return (
   <>
         <ul>
         {experiences.map((experience)=> {
+          const experienceId = experience.id;
           return(
-            <li key={experience.id}>{experience.experience}</li>
+            <li key={experienceId} onClick={()=>{handleClick(experienceId)}}>{experience.experience}</li>
           )
         })}
       </ul>
