@@ -2,7 +2,7 @@ import { useState } from "react";
 import { TextField, Button } from "@mui/material";
 import axios from "axios";
 
-export default function ExperinceInput() {
+export default function ExperinceInput(props) {
   
   // State for experience
   const [experience, setExperience] = useState("");
@@ -19,6 +19,7 @@ export default function ExperinceInput() {
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_SERVER}/experiences`, data);
       console.log(response);
+      props.setAllExperince([...props.previousExperiences, response.data]);
     }
     catch(error){
       console.log('error submitting data', error);
