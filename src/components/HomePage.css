@@ -1,0 +1,36 @@
+.home-page {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-column {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 20%;
+  background-color: #f6f7f8;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.central-column {
+  margin-left: 20%; /* Adjust margin to accommodate the fixed left column */
+  width: 55%;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Enable vertical scrolling */
+  height: 100vh; /* Set a fixed height to enable infinite scrolling */
+}
+
+.right-column {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 25%;
+  background-color: #f6f7f8;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
