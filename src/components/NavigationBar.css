@@ -1,5 +1,5 @@
 .navigation-bar {
-  background-color: #333;
+  background-color: #fff;
   color: #fff;
   padding: 10px;
   display: flex;
@@ -8,17 +8,19 @@
   align-items: center;
   z-index: 5;
   width: 100%;
+  border: rgb(221, 216, 216) solid 0.5px;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   margin-left: 2%;
+  color: #ff4500;
 }
 
 .login-button {
   padding: 8px 16px;
-  background-color: #4caf50;
+  background-color: #ff4500;
   color: #fff;
   border: none;
   border-radius: 4px;
