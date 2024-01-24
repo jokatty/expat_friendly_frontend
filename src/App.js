@@ -1,5 +1,4 @@
-// import logo from './logo.svg';
-import './App.css';
+
 import Home from './components/Home';
 import Questions from './components/questions';
 import ExperienceInput from './components/ExperienceInput';
